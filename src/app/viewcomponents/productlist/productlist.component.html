@@ -23,7 +23,7 @@
                 <td mat-cell *matCellDef="let product"><button mat-raised-button color="primary"
                         (click)="deleteProduct(product.ProductID)">Delete</button>
                         <button mat-raised-button color="primary"
-                        (click)="updateProduct(product.ProductID)">Update</button></td>
+                        (click)="updateProduct(product.Name)">Update</button></td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

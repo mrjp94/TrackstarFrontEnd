@@ -32,9 +32,9 @@ export class ProductlistComponent implements OnInit {
     });
   }
 
-  updateProduct(productid: Number)
+  updateProduct(productname: String)
   {
-    this.service.setProductid(productid); 
+    this.service.setProductname(productname); 
     this.goToMain(); 
   }
 

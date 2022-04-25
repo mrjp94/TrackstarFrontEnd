@@ -15,14 +15,14 @@ export class ProductinfoComponent implements OnInit {
   productForm: FormGroup;
   title: String = "Create Product";
   product: Product;
-  productid: Number;
+  productname: String;
   constructor(
     private fb: FormBuilder,
     private service: ProductService,
     private router: Router
   ) {
-    this.productid = this.service.getProductid();
-    if (this.productid > 0) {
+    this.productname = this.service.getProductname();
+    if (this.productname != "") {
       this.title = "Update Product";
     }
     else {
@@ -37,8 +37,8 @@ export class ProductinfoComponent implements OnInit {
       Price: ['', Validators.compose([Validators.required, Validators.min(1), Validators.max(20000)])]
     })
   
-    if (this.productid != 0) {
-      this.service.getProductById(this.productid).then(data => {
+    if (this.productname != "") {
+      this.service.getProductByName(this.productname).then(data => {
         this.product = data[0];
         this.productForm.controls["Name"].setValue(this.product.Name);
         this.productForm.controls["Description"].setValue(this.product.Description);
@@ -49,7 +49,7 @@ export class ProductinfoComponent implements OnInit {
 
   onSubmit() {
     if (this.productForm.valid == true) {
-      if (this.productid == 0) {
+      if (this.productname == "") {
         this.product = new Product({
           ProductID: null,
           Name: this.productForm.controls["Name"].value,
@@ -84,7 +84,7 @@ export class ProductinfoComponent implements OnInit {
           }
         });
       }
-      this.service.setProductid(0)
+      this.service.setProductname("")
     }
     else {
       return false;
