@@ -71,7 +71,6 @@ export class ProductService {
   {
     try {
       const NameData: any = await this.httpClient.get(this.Url+"/getproductbyname/"+product.Name.toString()).toPromise();
-      debugger; 
       if (NameData.length > 0)
       {
         if (NameData[0].ProductID != product.ProductID){
