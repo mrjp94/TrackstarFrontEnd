@@ -43,7 +43,7 @@ describe('ProductinfoComponent', () => {
   });
 
   it('should submit when all forms are filled and valid', () => {
-    component.productForm.setValue({productName: "Juan", description: "Pablo", price:"jpsj@price.com"}); 
+    component.productForm.setValue({productName: "Dish Soap", description: "Test dish soap", price:"5.45"}); 
     expect(component.productForm.valid).toEqual(true); 
   });
 });
