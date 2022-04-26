@@ -45,7 +45,7 @@ export class ProductlistComponent implements OnInit {
 
   goToMain()
   {
-    this.router.navigate(['']);
+    this.router.navigate(['productinfo']);
   }
 
 }
