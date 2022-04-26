@@ -29,6 +29,7 @@
         <mat-error *ngIf="productForm.get('Price').hasError('min')">Price cannot be lower than 1 USD</mat-error>
         <mat-error *ngIf="productForm.get('Price').hasError('max')">Price cannot be higher than 20,000 USD</mat-error>
       </mat-form-field>
+      <button mat-raised-button class="return-button" (click)="goToProductList()">Return</button>
       <button mat-raised-button color="primary">Submit</button>
     </form>
   </mat-card-content>

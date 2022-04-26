@@ -14,6 +14,7 @@ export class ProductService {
     })
 }
   productid: Number = 0; 
+  productname: String = "";
   constructor(private httpClient: HttpClient) { 
 
   }
@@ -84,12 +85,12 @@ export class ProductService {
     }
   }
 
-  setProductid(id: Number)
+  setProductname(name: String)
   {
-    this.productid = id; 
+    this.productname = name; 
   }
 
-  getProductid() {  
-    return this.productid;  
+  getProductname() {  
+    return this.productname;  
   }  
 }

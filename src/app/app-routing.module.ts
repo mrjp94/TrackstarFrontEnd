@@ -6,11 +6,11 @@ import { ProductlistComponent } from './viewcomponents/productlist/productlist.c
 
 
 const routes: Routes = [
-{  path: '',
+{  path: 'productinfo',
   component: ProductinfoComponent},
   {  path: 'productlist',
   component: ProductlistComponent,},
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'productlist' },
 ];
 
 @NgModule({
